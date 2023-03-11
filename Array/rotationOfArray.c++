@@ -4,39 +4,44 @@ using namespace std;
 void rotateArray(int arr[], int n, int k)
 {
     k = k % n;
-    for (int i = 0; i < k / 2; i++)
-    {
-        swap(arr[i], arr[k - i - 1]);
-    }
-
-    // Reverse the remaining elements
-    for (int i = k; i < (n + k) / 2; i++)
-    {
-        swap(arr[i], arr[n + k - i - 1]);
-    }
-    for (int i = 0; i < n / 2; i++)
-    {
-        swap(arr[i], arr[n - i - 1]);
-    }
-}
-int main()
+    int ansArray[n];
+    int j =0;
+for (int i = n-k; i <n; i++)
 {
-    int n, k;
-    cout << "Enter the size of the array: ";
-    cin >> n;
-    int arr[n];
-    cout << "Enter the elements of the array: ";
-    for (int i = 0; i < n; i++)
+    ansArray[j]=arr[i];
+    j++;
+}
+for (int i = 0; i <= n-k; i++)
+{
+    ansArray[j] = arr[i];
+    j++;
+}
+for (int  i = 0; i <n; i++)
+{
+    cout<<ansArray[i]<<" ";
+}
+}
+int main(int argc, char const *argv[])
+{
+    int size;
+    cout << "please enter the size of array:\n";
+    cin >> size;
+    int array[size];
+    cout << "enter the element of the array:\n";
+    for (int i = 0; i < size; i++)
     {
-        cin >> arr[i];
+        cin >> array[i];
     }
-    cout << "Enter the number of positions to rotate: ";
-    cin >> k;
-    rotateArray(arr, n, k);
-    cout << "The rotated array is: ";
-    for (int i = 0; i < n; i++)
+    cout << "the element you have entered are:\n";
+    for (int i = 0; i < size; i++)
     {
-        cout << arr[i] << " ";
+        cout << array[i] << " ";
     }
+    cout << endl;
+    cout << "please enter the number of rotation:\n";
+    int rotation=0;
+    cin>>rotation;
+    cout << "the array after rotation: ";
+    rotateArray(array,size,rotation);
     return 0;
 }

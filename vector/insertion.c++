@@ -31,6 +31,5 @@ int main(int argc, char const *argv[])
     {
         cout << myVec[i] << " ";
     }
-
     return 0;
 }

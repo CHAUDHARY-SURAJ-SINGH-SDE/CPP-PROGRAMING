@@ -38,6 +38,10 @@
     "chrono": "cpp",
     "algorithm": "cpp",
     "streambuf": "cpp",
-    "*.tcc": "cpp"
+    "*.tcc": "cpp",
+    "array": "cpp",
+    "initializer_list": "cpp",
+    "utility": "cpp",
+    "valarray": "cpp"
   }
 }
