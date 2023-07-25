@@ -1,6 +1,5 @@
 #include<iostream>
 using namespace std;
-int unqueElement(int arr[], int n) ;
 int main(int argc, char const *argv[])
 {
     int size;
@@ -18,25 +17,26 @@ int main(int argc, char const *argv[])
         cout<<array[i]<<" ";
     }
     cout<<endl;
-    int unique = unqueElement(array,size);
-    cout<<"the unique element in the array is: "<<unique;
-    return 0;
-}
-int unqueElement(int arr[],int n){
-    int unique=-1;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < size; i++)
     {
-        for (int j = i+1; i < n; j++)
+        for (int j = i+1; i < size; j++)
         {
-            if (arr[i]!=arr[j])
+            if (array[i]==array[j])
             {
-            continue;
-            }
-            else
-            {
-                return arr[i];
-            }
-               
+            array[i]=array[j]=-1;
+            }  
         }
-    }  
+    }
+    cout << "the unique element in the array is:"
+         << "\n";
+    for (int  i = 0; i < size; i++)
+    {
+        if (array[i]>=0)
+        {
+            cout<<array[i]<<" ";
+        }
+        
+    }
+    return 0;
+    
 }
